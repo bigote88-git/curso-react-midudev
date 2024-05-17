@@ -1,7 +1,7 @@
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Onest', sans-serif;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    background-color: #8f4040;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -11,13 +11,17 @@
 
 body {
     color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    /* background-color: #242424; */
     color-scheme: light dark;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Onest', system-ui, sans-serif;
+    background-color: #2E49FF;
+    /* background-image: */
+    background: rgb(97, 58, 180);
+    background: linear-gradient(90deg, rgba(97, 58, 180, 1) 0%, rgba(29, 105, 253, 1) 50%, rgba(69, 232, 252, 1) 100%);
 }
 
 #app {
-    margin: 20px auto;
+    margin: 0px auto;
     line-height: 1.5;
     font-weight: 400;
 }
@@ -25,11 +29,29 @@ body {
 section {
     display: flex;
     flex-wrap: wrap;
+    gap: 5px;
     justify-content: center;
+    padding-top: 140px;
+    padding-bottom: 2rem;
 }
 
 h1 {
     text-align: center;
+    font-size: 1em;
+    /* opacity: 0.8; */
+    /* background-color: #1F1452; */
+    margin: 0;
+    padding: 10px;
+    transition: background ease-in-out 300ms;
+    /* background: rgb(31, 20, 82);
+    background: linear-gradient(180deg, rgba(31, 20, 82, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 67, 156, 1) 100%); */
+}
+
+header {
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 150px;
 }
 
 a {
@@ -38,20 +60,39 @@ a {
     text-decoration: inherit;
 }
 
+.filter-year {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+.count-games {
+    display: block;
+    background-color: #00439C;
+    width: 100%;
+    text-align: center;
+}
+
+
+/* .filter-year button {} */
+
 a:hover {
     color: #535bf2;
 }
 
 body {
     margin: 0;
-    display: flex;
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
 }
 
 h1 {
-    font-size: 3.2em;
+    font-size: 2.2em;
     line-height: 1.1;
 }
 
@@ -62,9 +103,10 @@ button {
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #1a1a1a;
+    background-color: #2f4fe1;
     cursor: pointer;
     transition: border-color 0.25s;
+    color: azure;
 }
 
 button:hover {

@@ -31,7 +31,9 @@
   ** Se recomienda usar la prop especial children cuando queremos que el componente 
      sea mas reutilizable (agregar mas contenido)
 
-  useState : Estado: un objeto que puede cambiar sus datos en el tiempo.
+  ****************************************************************************************
+  ** useState : Estado: un objeto que puede cambiar sus datos en el tiempo.             **
+  ****************************************************************************************
   **Un estado es un valor que cada vez que cambie va a renderizar nuevamente el 
   componente.
   **La actualizacion de los estados son asincronos
@@ -45,6 +47,7 @@
   el valor inicial del estado.
   Hook: son utilidades que añaden comportamiento/funcionalidad a tus componentes.
   **Los hook no pueden estar dentro de un condicional**
+  **Evitar pasar el setState fuera del componente**
 
   Leer del local storage es lento, sincrono y bloquea
 
@@ -57,8 +60,10 @@
   **El estado inicial solo se inicializa una vez**
   **Cuando se renderiza una lista de componentes es necesario indicarle una key
 
-  useEffect: Nos permite ejecutar codigo arbitrario cuando el componente se monta
-  en el DOM y cada vez que cambian las dependencias que le indiquemos.
+  ****************************************************************************************
+  ** useEffect: Nos permite ejecutar codigo arbitrario cuando el componente se monta    **
+  ** en el DOM y cada vez que cambian las dependencias que le indiquemos.               **
+  ****************************************************************************************
   Se declara en el cuerpo del componente, se ejecuta cada vez que se renderiza el 
   componente.
   Con el useEffect controlamos cuando nos suscribimos a un efecto (evento/codigo arbitrario).
@@ -75,8 +80,7 @@
   [a, b, ...] = cuando cambian las dependencias y se monta el componente.
   undefined = cada vez que se renderiza el componente.
 
-  ** La funcion del useEffect siempre tiene que se sincrona.
-  
+  ** La funcion del useEffect siempre tiene que ser sincrona.  
 
   SWC: es como Babel para compilar Javascript pero mas rapido.
   Configurar Linter Standard.js
@@ -119,5 +123,20 @@
     1. Siempre en el useEffect colocar las dependencias o el array vacio en su defecto [].
     2. Nuestra aplicacion tiene que ser incremental (es decir que se vaya viendo el progreso)
     3. Analizar los datos que nos dan antes de empezar a codear.
+	4. Los metodos o variables de los hook de react no deberian estar fuera del componente, siempre tienen
+	   que quedar dentro del mismo componente
 
+  ****************************************************************************************
+  ** customHooks: reutilizar logica de nuestros componentes en otros componentes
+  ****************************************************************************************
+    1. Tiene que empezar con la palabra use
+	2. Tiene que seguir cualquier regla que tenga que ver con un hook (no puede estar dentro de
+	   un condicional, tiene que ser llamado dentro del cuerpo del componente.
+	3. La diferencia con una funcion normal es que podes llamar hook dentro.
+	4. Debe retornar el valor del estado
+	5. No pueden ir atado a la implementacion (no hay que darles nombres basados
+	   en la implementacion)
+	6. Evitar que un customHook devuelva la funcion de actualizacion del estado
+  
+  
 

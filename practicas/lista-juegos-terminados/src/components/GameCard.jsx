@@ -1,7 +1,7 @@
 import './GameCard.css'
 
-const PREFIX_FRONTIMG_URL = '../public/assets/front-images';
-const PREFIX_COMPANYIMG_URL = '../public/assets/icon-images';
+const PREFIX_FRONTIMG_URL = '../assets/front-images';
+const PREFIX_COMPANYIMG_URL = '/assets/icon-images';
 
 export const GameCard = ({ frontImgUrl, titleGame, companyImgUrl }) => {
     return (
